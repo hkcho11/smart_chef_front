@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-
+import "./Login.css"; // CSS는 따로!
 function Login() {
   const navigate = useNavigate();
 
@@ -16,42 +16,12 @@ function Login() {
   return (
     <div>
       <div className="wrapper">
-        <div className="container">
-            <div className="sign-in-container">
-              <form onSubmit={handleLogin}>
-                <h1>Smart Chef</h1>
-                <div className="social-links">
-                  <div>
-                    <i className="fa fa-facebook" aria-hidden="true"></i>
-                  </div>
-                  <div>
-                    <i className="fa fa-twitter" aria-hidden="true"></i>
-                  </div>
-                  <div>
-                    <i className="fa fa-linkedin" aria-hidden="true"></i>
-                  </div>
-                </div>
-                <span>or use your account</span>
-                <input type="email" placeholder="Email" />
-                <input type="password" placeholder="Password" />
-                <button type="submit" className="form_btn">
-                  로그인
-                </button>
-              </form>
-            </div>          
+        <div className="container">         
           <div className="overlay-container">
-            <div className="overlay-left">
-              <h1>Welcome Back</h1>
-              <p>To keep connected with us please login with your personal info</p>
-              <button  className="overlay_btn">
-                Sign In
-              </button>
-            </div>
             <div className="overlay-right">
-              <h1>안녕하세요</h1>
-              <p>스마트 쉐프님과 즐거운 요리를 즐기세요!</p>
-              <button className="overlay_btn">
-                Sign Up
+              <h1>Smart Chef</h1>            
+              <button className="overlay_btn"  onClick={handleLogin}>
+                Start
               </button>
             </div>
           </div>
