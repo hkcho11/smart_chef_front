@@ -139,7 +139,6 @@
 .recipe-box {
   display: flex;
   gap: 10px;
-  
 }
 .recipe-card {
   flex: 1;
