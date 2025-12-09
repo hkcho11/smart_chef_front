@@ -76,6 +76,17 @@
   background-color: #2fd7fd;
   color: #fff;
   box-shadow: -5px -5px 10px #6be2fd, 5px 5px 8px #2c8fa5;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 15px 45px;
+  margin: 14px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: transform 80ms ease-in;
 }
 
 .sign-in-container {
@@ -189,5 +200,5 @@
 }
 
 .social-links div:active {
-  box-shadow: inset 1px 1px 2px #babebc, inset -1px -1px 2px #fff; 
+  box-shadow: inset 1px 1px 2px #babebc, inset -1px -1px 2px #fff;
 }

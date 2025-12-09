@@ -1,0 +1,43 @@
+.layout {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  height: 100vh;
+  background: #f8fafa;
+}
+
+/* ===== 공통 사이드바 ===== */
+.side-nav {
+  background: #26a65b;
+  color: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.side-menu {
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #39a95c;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.side-menu:hover {
+  background: #22753a;
+  transform: translateY(-2px);
+}
+
+.menu-icon {
+  font-size: 20px;
+}

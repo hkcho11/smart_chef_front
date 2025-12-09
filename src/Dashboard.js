@@ -1,5 +1,6 @@
-import React from "react";
-import "./DashBoard.css"; // CSS는 따로!
+import "./style/DashBoard.css"; // CSS는 따로!
+import { useNavigate,useLocation } from "react-router-dom";
+
 
 export default function Dashboard() {
   const notifications = [
@@ -7,17 +8,22 @@ export default function Dashboard() {
     { text: "계란이 곧 상해요!", time: "어제" },
   ];
 
+
+
+
   return (
     <div className="layout">
       {/* --- Left Navigation --- */}
       <nav className="side-nav">
         <div className="logo">Smart Chef</div>
-        <NavItem label="냉장고" />
-        <NavItem label="레시피" />
-        <NavItem label="통계" />
-        <NavItem label="가족" />
-        <NavItem label="설정" />
+        <NavItem label="냉장고" path="/fridge"  />
+        <NavItem label="레시피" path="/recipe" />
+        <NavItem label="통계"  path="/stats" />
+        <NavItem label="가족" path="/family"/>
+        <NavItem label="설정" path="/settings"/>
       </nav>
+
+      
 
       {/* --- Main Content --- */}
       <div className="main">
@@ -97,8 +103,21 @@ export default function Dashboard() {
 
 /* --- Components --- */
 
-function NavItem({ label }) {
-  return <div className="nav-item">{label}</div>;
+function NavItem({ label,onClick,path}) {
+
+  const navigate = useNavigate();
+  const location = useLocation();
+
+
+  return <div 
+  className="nav-item" 
+  onClick={()=>{
+    console.log("location = pathname 현 path",location.pathname);
+    console.log("label path =  클릭 path ",path);
+    if(path!==location.path) navigate(path);  
+    onClick?.();
+  }}
+  >{label}</div>;
 }
 
 function RecipeCard({ title, rate, onClick }) {

@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import "./Login.css"; // CSS는 따로!
+import "./style/Login.css"; // CSS는 따로!
 function Login() {
   const navigate = useNavigate();
 

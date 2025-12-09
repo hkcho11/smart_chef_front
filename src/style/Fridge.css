@@ -1,0 +1,97 @@
+.content {
+  padding: 24px 40px;
+}
+
+/* 상단 검색바 */
+.top-bar {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.search-box {
+  width: 240px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.add-btn {
+  background: #1e9b43;
+  border: none;
+  padding: 8px 16px;
+  color: white;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* 제목 */
+.title {
+  margin: 10px 0 15px 0;
+  font-size: 22px;
+}
+
+/* 탭 */
+.tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.tab {
+  padding: 8px 22px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  background: white;
+  cursor: pointer;
+}
+
+.tab.active {
+  background: #1e9b43;
+  color: white;
+}
+
+/* 유통기한 경고 */
+.warning {
+  background: #FFF3D6;
+  border: 1px solid #F6B76B;
+  padding: 12px 16px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 22px;
+}
+
+.link-btn {
+  background: none;
+  color: #1E7AAD;
+  border: none;
+  cursor: pointer;
+}
+
+/* 아이템 그리드 */
+.items-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.item-card {
+  background: white;
+  border-radius: 12px;
+  padding: 14px 20px;
+  box-shadow: 0 0 6px rgba(0,0,0,0.05);
+}
+
+.category-title {
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.item {
+  color: #4a4a4a;
+  margin: 4px 0;
+  font-size: 14px;
+}
