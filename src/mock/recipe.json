@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "name": "김치볶음밥",
+    "category": "한식",
+    "emoji": "🍳",
+    "rating": 4.8,
+    "time": "15분",
+    "difficulty": "쉬움",
+    "ingredientPercent": 100
+  },
+  {
+    "id": 2,
+    "name": "알리오 올리오",
+    "category": "양식",
+    "emoji": "🍝",
+    "rating": 4.5,
+    "time": "20분",
+    "difficulty": "쉬움",
+    "ingredientPercent": 80
+  },
+  {
+    "id": 3,
+    "name": "제육볶음",
+    "category": "한식",
+    "emoji": "🥘",
+    "rating": 4.7,
+    "time": "25분",
+    "difficulty": "보통",
+    "ingredientPercent": 90
+  },
+  {
+    "id": 4,
+    "name": "계란말이",
+    "category": "한식",
+    "emoji": "🍳",
+    "rating": 4.6,
+    "time": "10분",
+    "difficulty": "쉬움",
+    "ingredientPercent": 100
+  },
+  {
+    "id": 5,
+    "name": "짜장면",
+    "category": "중식",
+    "emoji": "🍜",
+    "rating": 4.9,
+    "time": "30분",
+    "difficulty": "쉬움",
+    "ingredientPercent": 75
+  },
+  {
+    "id": 6,
+    "name": "된장국",
+    "category": "한식",
+    "emoji": "🍲",
+    "rating": 4.4,
+    "time": "15분",
+    "difficulty": "쉬움",
+    "ingredientPercent": 85
+  }
+]

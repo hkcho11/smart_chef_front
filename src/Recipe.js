@@ -1,9 +1,31 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate,useLocation } from "react-router-dom";
 import "./style/Recipe.css"; // 스타일 파일 
 import "./style/Common.css"; // 스타일 파일 
+import recipeData from "./mock/recipe.json";
 
 export default function Recipe() {
+  const [recipes, setRecipes] = useState([]);
+  const [categories, setCategories] = useState([]);
+  const [activeCategory, setActiveCategory] = useState('전체');
+
+  useEffect(() => {
+    setRecipes(recipeData);
+    setCategories(['전체', '한식', '양식', '중식', '일식']);
+  }, []);
+
+  const onCategoryClick = (category) => {
+    console.log("Category Click:", category);
+
+    setActiveCategory(category);
+
+    if(category === '전체') {
+      setRecipes(recipeData);
+    } else {
+      setRecipes(recipeData.filter(recipe => recipe.category === category));
+      console.log("Recipes:", recipes);
+    }
+  };
 
   return (
     <div className="layout">
@@ -41,31 +63,36 @@ export default function Recipe() {
 
         {/* 카테고리 버튼 */}
         <div className="category-tabs">
-          <button className="active">전체</button>
-          <button>한식</button>
-          <button>양식</button>
-          <button>중식</button>
-          <button>일식</button>
+          {categories.map((category) => (
+            <button 
+              key={category}
+              className={category === activeCategory ? 'active' : ''}
+              onClick={() => onCategoryClick(category)}
+            >
+              {category}
+            </button>
+          ))}
         </div>
+        
 
         {/* 레시피 그리드 */}
         <div className="recipe-grid">
-          <div className="recipe-card">
-            <div className="card-img">🍳</div>
-            <h3>김치볶음밥</h3>
-            ⭐ 4.8 | 15분 | 쉬움
-            <div className="tag">100% 재료 보유</div>
-          </div>
-
-          <div className="recipe-card">
-            <div className="card-img">🍲</div>
-            <h3>된장찌개</h3>
-            ⭐ 4.5 | 20분 | 쉬움
-            <div className="tag">80% 재료 보유</div>
-          </div>
-
-          {/* 앞으로 여기 데이터 map으로 출력 */}
+          {recipes.length > 0 ? (
+            recipes.map((recipe) => (
+              <div key={recipe.id} className="recipe-card">
+                <div className="card-img">{recipe.emoji}</div>
+                <h3>{recipe.name}</h3>
+                ⭐ {recipe.rating} | {recipe.time} | {recipe.difficulty}
+                <div className="tag">{recipe.ingredientPercent}% 재료 보유</div>
+              </div>
+            ))
+          ) : (
+            <div className="recipe-card">
+              레시피가 없습니다.
+            </div>
+          )}
         </div>
+        
       </main>
     </div>
   );
