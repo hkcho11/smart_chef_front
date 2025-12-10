@@ -1,4 +1,5 @@
 import "./style/DashBoard.css"; // CSS는 따로!
+import "./style/Common.css"; // CSS는 따로!
 import { useNavigate,useLocation } from "react-router-dom";
 
 

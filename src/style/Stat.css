@@ -1,0 +1,177 @@
+.Stat-layout {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  height: 100vh;
+  background: #f4f7fb;
+  overflow: hidden;
+}
+
+/* ===== Side Navigation ===== */
+/* .side-nav {
+  background: #1c2434;
+  color: #fff;
+  padding: 24px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.side-nav .logo {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 20px;
+} */
+
+.nav-item {
+  padding: 12px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.25s, transform 0.25s;
+}
+
+.nav-item:hover {
+  background: #ffffff22;
+  transform: translateX(6px);
+}
+
+/* ===== Main ===== */
+.Stat-content {
+  padding: 26px 38px;
+  overflow-y: auto;
+}
+
+.Stat-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+}
+
+.Stat-header h2 {
+  font-size: 26px;
+  font-weight: 700;
+}
+
+
+/* ===== KPI Grid ===== */
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-bottom: 28px;
+}
+
+.kpi-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 22px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  animation: fadeUp 0.45s ease both;
+  position: relative;
+  transition: transform .2s, box-shadow .2s;
+}
+
+.kpi-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+}
+
+.kpi-value {
+  font-size: 28px;
+  font-weight: 700;
+  margin: 8px 0;
+}
+
+.kpi-value.green { color: #0abf4b; }
+
+.kpi-sub-text {
+  font-size: 13px;
+  color: #666;
+}
+
+/* ===== Chart Area ===== */
+.charts-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  margin-bottom: 28px;
+}
+
+.chart-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 22px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  animation: fadeUp 0.55s ease both;
+}
+
+.chart-placeholder {
+  height: 250px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #e0e9ff, #d3e2ff);
+  margin: 14px 0;
+}
+
+.chart-sub-text {
+  font-size: 13px;
+  color: #666;
+}
+
+/* ===== Top3 ===== */
+.top3-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 14px;
+}
+
+.top3-list li {
+  font-size: 15px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #eee;
+  padding: 10px 4px;
+}
+
+/* ===== Achievement ===== */
+.achievement-card {
+  background: #fff;
+  padding: 22px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  animation: fadeUp 0.65s ease both;
+}
+
+.badge-list {
+  display: flex;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.badge-list span {
+  background: #f0f8ff;
+  padding: 8px 14px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* ===== Animation Keyframes ===== */
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== Scrollbar Style ===== */
+.Stat-content::-webkit-scrollbar {
+  width: 6px;
+}
+.Stat-content::-webkit-scrollbar-thumb {
+  background: #ccd4e0;
+  border-radius: 8px;
+}

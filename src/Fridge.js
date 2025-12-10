@@ -17,11 +17,11 @@ export default function Fridge() {
       </nav>
 
       {/* Main */}
-      <main className="content">
+      <main className="fridge-content">
         {/* Top Bar */}
         <div className="top-bar">
           <input className="search-box" placeholder="재료 검색..." />
-          <button className="add-btn">+ 재료 추가</button>
+          <button className="add-btn">+ 추가</button>
         </div>
 
         {/* Title */}

@@ -4,6 +4,7 @@ import Login from './Login'
 import Fridge from './Fridge'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Recipe from './Recipe';
+import Stat from './Stat';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/fridge" element={<Fridge />} />
         <Route path="/Recipe" element={<Recipe />} />
+        <Route path="/Stat" element={<Stat />} />
       </Routes>
     </Router>
     </div>

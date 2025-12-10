@@ -2,8 +2,9 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 18px;
-  padding: 24px 40px;
+  gap: 20px;
+  padding: 28px 36px;
+  background: #f8fbff;
 }
 
 /* 헤더 영역 */
@@ -11,85 +12,125 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 10px;
-  margin-bottom: 12px;
 }
 
 .search-title {
-  font-size: 20px;
-  font-weight: 600;
+  font-size: 22px;
+  font-weight: 700;
+  color: #333;
 }
 
 .actions {
   display: flex;
-  gap: 8px;
+  gap: 10px;
 }
 
 .actions button {
-  border: none;
-  padding: 8px 14px;
-  border-radius: 8px;
+  padding: 8px 16px;
   background: #e0f4e5;
+  color: #2e7d32;
+  border: none;
+  border-radius: 10px;
+  font-size: 14px;
   cursor: pointer;
+  transition: 0.2s;
+}
+
+.actions button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 3px 10px rgba(46, 125, 50, 0.25);
 }
 
 /* 긴급 추천 배너 */
 .urgent-banner {
-  background: #ff9100;
+  background: linear-gradient(45deg, #ff7800, #ff9b27);
   color: white;
   padding: 14px;
-  border-radius: 12px;
+  border-radius: 14px;
   font-size: 14px;
-  line-height: 1.4;
+  font-weight: 500;
+  box-shadow: 0 4px 12px rgba(255, 102, 0, 0.25);
+  animation: bannerFade 0.8s ease both;
 }
 
-/* 카테고리 */
+@keyframes bannerFade {
+  from { opacity: 0; transform: translateY(-8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* 카테고리 탭 */
 .category-tabs {
   display: flex;
   gap: 10px;
+  background: #eef8ff;
+  padding: 10px 14px;
+  border-radius: 14px;
 }
 
 .category-tabs button {
   padding: 8px 14px;
   border-radius: 20px;
   border: none;
-  background: #e8edf1;
+  background: transparent;
   cursor: pointer;
+  color: #444;
+  font-size: 14px;
+  transition: 0.25s;
+}
+
+.category-tabs button:hover {
+  background: #d5eaff;
 }
 
 .category-tabs .active {
   background: #4caf50;
   color: white;
+  font-weight: 600;
 }
 
 /* 레시피 카드 그리드 */
 .recipe-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 14px;
+  gap: 18px;
 }
 
 .recipe-card {
   background: #ffffff;
-  padding: 14px;
+  padding: 16px;
   border-radius: 14px;
-  font-size: 14px;
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 8px;
+  cursor: pointer;
+  transition: 0.28s ease;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.06);
+}
+
+.recipe-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
 }
 
 .card-img {
-  font-size: 26px;
+  font-size: 34px;
   margin-bottom: 6px;
+}
+
+.recipe-card h4 {
+  font-size: 15px;
+  font-weight: 600;
+  color: #333;
 }
 
 .tag {
   align-self: flex-start;
   font-size: 12px;
   background: #e2f5e2;
+  color: #2e7d32;
   padding: 4px 8px;
   border-radius: 6px;
+  margin-top: 4px;
 }
 
 /* 반응형 */
@@ -102,5 +143,11 @@
 @media (max-width: 680px) {
   .recipe-grid {
     grid-template-columns: repeat(1, 1fr);
+  }
+
+  .search-area {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
   }
 }

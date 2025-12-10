@@ -1,126 +1,114 @@
-/* 전체 레이아웃 */
-.layout {
-  display: flex;
-  height: 100vh;
-  background: #f6f6f6;
-  font-family: "Pretendard", sans-serif;
-}
-
-/* --- 왼쪽 사이드 네비게이션 --- */
-.side-nav {
-  width: 200px;
-  background: #2ba046;
-  color: #fff;
-  display: flex;
-  flex-direction: column;
-  padding-top: 20px;
-}
-
-.logo {
-  font-size: 20px;
-  font-weight: 700;
-  text-align: center;
-  margin-bottom: 30px;
-}
-
 .nav-item {
-  padding: 12px 20px;
+  padding: 12px 14px;
+  border-radius: 10px;
   cursor: pointer;
-  transition: 0.2s;
-  font-size: 15px;
+  transition: background 0.25s, transform 0.25s;
 }
 .nav-item:hover {
-  background: #23873a;
+  background: #ffffff22;
+  transform: translateX(6px);
 }
 
-/* --- 메인 --- */
+/* ===== Main ===== */
 .main {
-  flex-grow: 1;
   display: flex;
   flex-direction: column;
 }
 
-/* --- 상단 바 --- */
+/* ===== Top Bar ===== */
 .top-bar {
-  height: 60px;
-  background: #fff;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+  height: 66px;
+  background: #ffffff;
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  gap: 16px;
-  padding: 0 24px;
+  padding: 0 28px;
+  gap: 18px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.05);
 }
 
 .search-input {
-  width: 240px;
-  height: 36px;
-  border: 1px solid #ddd;
-  border-radius: 6px;
-  padding: 0 10px;
+  width: 260px;
+  height: 38px;
+  border: 1px solid #ccd4e0;
+  border-radius: 10px;
+  padding: 0 12px;
+  outline: none;
+  transition: .25s;
+}
+.search-input:focus {
+  border-color: #4caf50;
 }
 
-/* 알림 아이콘 */
+/* Icons */
 .bell-btn {
   background: none;
   border: none;
   font-size: 22px;
-  position: relative;
   cursor: pointer;
+  position: relative;
+  color: #4caf50;
 }
 .badge {
   position: absolute;
+  top: -2px;
+  right: -4px;
   font-size: 10px;
-  background: #ff4d4d;
-  color: white;
+  background: #ff5252;
   padding: 2px 4px;
   border-radius: 6px;
+  color: white;
 }
 
-/* 프로필 */
-.profile .avatar {
-  font-size: 24px;
+.avatar {
+  font-size: 26px;
   cursor: pointer;
+  color: #555;
 }
 
-/* --- 대시보드 패널 --- */
+/* ===== Dashboard Grid ===== */
 .dashboard-grid {
-  padding: 20px;
+  padding: 28px 32px;
   display: grid;
   gap: 20px;
   grid-template-columns: 2fr 1fr;
-  grid-template-rows: auto auto;
+  overflow-y: auto;
 }
 
+/* ===== Panel Cards ===== */
 .panel {
   background: #fff;
-  border-radius: 12px;
-  padding: 16px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  border-radius: 16px;
+  padding: 22px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: .25s ease;
+  animation: fadeUp .45s ease both;
 }
-
-/* 제목 */
+.panel:hover {
+  transform: translateY(-3px);
+}
 .panel h2 {
   font-size: 18px;
+  font-weight: 700;
   margin-bottom: 14px;
 }
 
-/* 유통기한 임박 박스 */
+/* ===== Alert Box (유통기한) ===== */
 .alert-box {
-  background: #fff7e9;
-  border: 1.5px solid #ffb347;
-  padding: 12px;
-  border-radius: 10px;
+  background: #fff7e8;
+  border: 1.6px solid #ffc46a;
+  padding: 14px;
+  border-radius: 12px;
   margin-bottom: 16px;
 }
 .alert-box .desc {
   display: block;
   font-size: 13px;
-  color: #666;
+  color: #777;
   margin-top: 4px;
 }
 
-/* 카테고리 */
+/* ===== Category List ===== */
 .category {
   margin-bottom: 20px;
   font-size: 14px;
@@ -128,65 +116,87 @@
 .item {
   display: flex;
   justify-content: space-between;
-  margin-top: 6px;
+  margin-top: 8px;
 }
 .date {
-  font-weight: 600;
-  color: #2ba046;
+  font-weight: 700;
+  color: #4caf50;
 }
 
-/* 추천 레시피 */
+/* ===== Recipe Cards ===== */
 .recipe-box {
   display: flex;
-  gap: 10px;
+  gap: 12px;
 }
 .recipe-card {
   flex: 1;
-  background: #eef8ff;
-  border-radius: 10px;
-  padding: 14px;
+  background: #eef4ff;
+  border-radius: 16px;
+  padding: 18px;
   text-align: center;
-
   cursor: pointer;
-  transition: background 0.2s ease, border-color 0.2s ease;
+  transition: .25s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
-
-/* 마우스 호버 시 색상 변경 */
 .recipe-card:hover {
-  background: #2ba046;      /* 조금 더 진한 하늘색 */
-  border-color: #0066cc;      /* 테두리 색 진하게 */
+  background: #4caf50;
+  color: white;
+  transform: translateY(-6px);
 }
 .recipe-card .icon {
-  font-size: 30px;
+  font-size: 32px;
   margin-bottom: 8px;
 }
 .rate {
   font-size: 12px;
-  color: #444;
+  color: #555;
 }
 
-/* 통계 카드 */
+/* ===== Stats Row ===== */
 .stats-row {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 10px;
+  margin-bottom: 14px;
   font-size: 15px;
 }
 .green {
-  color: #2ba046;
+  color: #4caf50;
 }
 
+/* Detail Btn */
 .detail-btn {
   width: 100%;
-  margin-top: 16px;
-  background: #2ba046;
-  color: white;
+  margin-top: 18px;
+  background: #4caf50;
+  color: #fff;
   border: none;
-  border-radius: 8px;
-  height: 36px;
+  border-radius: 10px;
+  height: 40px;
   font-size: 14px;
   cursor: pointer;
+  transition: .2s;
 }
 .detail-btn:hover {
-  background: #23873a;
+  background: #179b1c;
+}
+
+/* ===== Animation ===== */
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== Scrollbar ===== */
+.dashboard-grid::-webkit-scrollbar {
+  width: 6px;
+}
+.dashboard-grid::-webkit-scrollbar-thumb {
+  background: #ccd4e0;
+  border-radius: 8px;
 }

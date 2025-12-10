@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate,useLocation } from "react-router-dom";
-import "./style/Recipe.css"; // 스타일 파일 (아래에 CSS 붙여줄게)
-import "./style/Common.css"; // 스타일 파일 (아래에 CSS 붙여줄게)
+import "./style/Recipe.css"; // 스타일 파일 
+import "./style/Common.css"; // 스타일 파일 
 
 export default function Recipe() {
 
@@ -22,11 +22,11 @@ export default function Recipe() {
       <main className="recipe-container">
          <div className="top-bar">
           <input className="search-box" placeholder="레시피 검색..." />
-          <button className="add-btn">+ 레시피 추가</button>
+          <button className="add-btn">+ 추가</button>
         </div>
         {/* 검색 영역 */}
         <div className="search-area">
-          <div className="search-title">🔍 레시피 추천</div>
+          <div className="title">🔍 레시피 추천</div>
           <div className="actions">
             <button>AI 추천</button>
             <button>검색</button>
