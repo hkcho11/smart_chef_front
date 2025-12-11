@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate,useLocation } from "react-router-dom";
-import "./style/Recipe.css"; // 스타일 파일 
-import "./style/Common.css"; // 스타일 파일 
-import recipeData from "./mock/recipe.json";
+import "../style/Recipe.css"; // 스타일 파일 
+import "../style/Common.css"; // 스타일 파일 
+import recipeData from "../mock/recipe.json";
+import Sidebar from "./Sidebar"; 
 
-export default function Recipe() {
+export default function Recipe({children }) {
   const [recipes, setRecipes] = useState([]);
   const [categories, setCategories] = useState([]);
   const [activeCategory, setActiveCategory] = useState('전체');
@@ -28,17 +28,11 @@ export default function Recipe() {
   };
 
   return (
-    <div className="layout">
-      {/* === Sidebar === */}    
-         <nav className="side-nav">
-        <div className="logo">Smart Chef</div>
-        <NavItem label="냉장고" path="/fridge" />
-        <NavItem label="레시피" path="/recipe" />
-        <NavItem label="통계" path="/stat" />
-        <NavItem label="가족" path="/family" />
-        <NavItem label="설정" path="/setting" />
-       
-      </nav>
+    /* === 공통단 === */
+   <div className="layout">
+  <Sidebar />
+  <div className="content">
+    {children}
 
       {/* === Recipe Page === */}
       <main className="recipe-container">
@@ -76,6 +70,7 @@ export default function Recipe() {
         
 
         {/* 레시피 그리드 */}
+        <div className="recipe-container">
         <div className="recipe-grid">
           {recipes.length > 0 ? (
             recipes.map((recipe) => (
@@ -92,23 +87,12 @@ export default function Recipe() {
             </div>
           )}
         </div>
+        </div>
         
       </main>
     </div>
+    </div>
   );
 
-    function NavItem({ label, path }) {
-  const navigate = useNavigate();
-    const location = useLocation();
-  return (
-    <div className="nav-item"
-      onClick={() => {
-        console.log("Click:", label, path);
-        if(path!==location.path) navigate(path) ;  
-      }}
-    >
-      {label}
-    </div>
-  )
-}
+
 }

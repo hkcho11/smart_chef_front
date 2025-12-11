@@ -1,5 +1,5 @@
  import { useNavigate } from 'react-router-dom';
-import "./style/Login.css"; // CSS는 따로!
+import "../style/Login.css"; // CSS는 따로!
 function Login() {
   const navigate = useNavigate();
 
@@ -8,7 +8,7 @@ function Login() {
    const handleLogin = (e) => {
      e.preventDefault();  // 폼 제출 시 페이지 리로드 방지
   //   // 로그인 성공 로직 후 대시보드로 이동
-     navigate("/dashboard");
+     navigate("./dashboard");
    }
 
   const particles = Array.from({ length: 15 });

@@ -1,10 +1,10 @@
 import './style/App.css';
-import Dashboard from './Dashboard';
-import Login from './Login'
-import Fridge from './Fridge'
+import Dashboard from './component/Dashboard';
+import Login from './component/Login'
+import Fridge from './component/Fridge'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Recipe from './Recipe';
-import Stat from './Stat';
+import Recipe from './component/Recipe';
+import Stat from './component/Stat';
 
 function App() {
   return (

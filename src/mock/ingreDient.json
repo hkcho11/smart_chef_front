@@ -1,0 +1,466 @@
+[
+  {
+    "id": 1,
+    "name": "우유",
+    "emoji": "🥛",
+    "category": "유제품",
+    "quantity": "1L",
+    "expiryDate": "2026-01-05",
+    "storage": "냉장"
+  },
+  {
+    "id": 2,
+    "name": "치즈",
+    "emoji": "🧀",
+    "category": "유제품",
+    "quantity": "200g",
+    "expiryDate": "2026-02-10",
+    "storage": "냉장"
+  },
+  {
+    "id": 3,
+    "name": "계란",
+    "emoji": "🥚",
+    "category": "유제품",
+    "quantity": "30개",
+    "expiryDate": "2026-01-20",
+    "storage": "냉장"
+  },
+  {
+    "id": 4,
+    "name": "요거트",
+    "emoji": "🍶",
+    "category": "유제품",
+    "quantity": "4개",
+    "expiryDate": "2026-01-12",
+    "storage": "냉장"
+  },
+
+  {
+    "id": 5,
+    "name": "닭가슴살",
+    "emoji": "🍗",
+    "category": "육류",
+    "quantity": "500g",
+    "expiryDate": "2026-01-03",
+    "storage": "냉동"
+  },
+  {
+    "id": 6,
+    "name": "돼지고기 앞다리",
+    "emoji": "🥩",
+    "category": "육류",
+    "quantity": "300g",
+    "expiryDate": "2026-01-04",
+    "storage": "냉장"
+  },
+  {
+    "id": 7,
+    "name": "소고기 불고기용",
+    "emoji": "🥩",
+    "category": "육류",
+    "quantity": "400g",
+    "expiryDate": "2026-01-02",
+    "storage": "냉동"
+  },
+  {
+    "id": 8,
+    "name": "베이컨",
+    "emoji": "🥓",
+    "category": "육류",
+    "quantity": "200g",
+    "expiryDate": "2026-01-18",
+    "storage": "냉장"
+  },
+
+  {
+    "id": 9,
+    "name": "고등어",
+    "emoji": "🐟",
+    "category": "해산물",
+    "quantity": "2마리",
+    "expiryDate": "2026-01-07",
+    "storage": "냉동"
+  },
+  {
+    "id": 10,
+    "name": "오징어",
+    "emoji": "🦑",
+    "category": "해산물",
+    "quantity": "3마리",
+    "expiryDate": "2026-01-30",
+    "storage": "냉동"
+  },
+  {
+    "id": 11,
+    "name": "새우",
+    "emoji": "🦐",
+    "category": "해산물",
+    "quantity": "300g",
+    "expiryDate": "2026-02-25",
+    "storage": "냉동"
+  },
+  {
+    "id": 12,
+    "name": "연어",
+    "emoji": "🍣",
+    "category": "해산물",
+    "quantity": "200g",
+    "expiryDate": "2026-01-08",
+    "storage": "냉장"
+  },
+
+  {
+    "id": 13,
+    "name": "당근",
+    "emoji": "🥕",
+    "category": "채소",
+    "quantity": "5개",
+    "expiryDate": "2026-01-15",
+    "storage": "냉장"
+  },
+  {
+    "id": 14,
+    "name": "양파",
+    "emoji": "🧅",
+    "category": "채소",
+    "quantity": "3개",
+    "expiryDate": "2026-02-01",
+    "storage": "실온"
+  },
+  {
+    "id": 15,
+    "name": "감자",
+    "emoji": "🥔",
+    "category": "채소",
+    "quantity": "8개",
+    "expiryDate": "2026-02-15",
+    "storage": "실온"
+  },
+  {
+    "id": 16,
+    "name": "배추",
+    "emoji": "🥬",
+    "category": "채소",
+    "quantity": "1포기",
+    "expiryDate": "2026-01-22",
+    "storage": "냉장"
+  },
+  {
+    "id": 17,
+    "name": "대파",
+    "emoji": "🌿",
+    "category": "채소",
+    "quantity": "10줄",
+    "expiryDate": "2026-01-10",
+    "storage": "냉장"
+  },
+  {
+    "id": 18,
+    "name": "브로콜리",
+    "emoji": "🥦",
+    "category": "채소",
+    "quantity": "1송이",
+    "expiryDate": "2026-01-11",
+    "storage": "냉장"
+  },
+  {
+    "id": 19,
+    "name": "버섯",
+    "emoji": "🍄",
+    "category": "버섯류",
+    "quantity": "200g",
+    "expiryDate": "2026-01-06",
+    "storage": "냉장"
+  },
+  {
+    "id": 20,
+    "name": "양배추",
+    "emoji": "🥬",
+    "category": "채소",
+    "quantity": "1/2통",
+    "expiryDate": "2026-02-10",
+    "storage": "냉장"
+  },
+
+  {
+    "id": 21,
+    "name": "사과",
+    "emoji": "🍎",
+    "category": "과일",
+    "quantity": "4개",
+    "expiryDate": "2026-01-25",
+    "storage": "실온"
+  },
+  {
+    "id": 22,
+    "name": "바나나",
+    "emoji": "🍌",
+    "category": "과일",
+    "quantity": "6개",
+    "expiryDate": "2026-01-02",
+    "storage": "실온"
+  },
+  {
+    "id": 23,
+    "name": "딸기",
+    "emoji": "🍓",
+    "category": "과일",
+    "quantity": "500g",
+    "expiryDate": "2026-01-05",
+    "storage": "냉장"
+  },
+  {
+    "id": 24,
+    "name": "포도",
+    "emoji": "🍇",
+    "category": "과일",
+    "quantity": "1송이",
+    "expiryDate": "2026-01-06",
+    "storage": "냉장"
+  },
+
+  {
+    "id": 25,
+    "name": "두부",
+    "emoji": "🍲",
+    "category": "가공식품",
+    "quantity": "300g",
+    "expiryDate": "2026-01-03",
+    "storage": "냉장"
+  },
+  {
+    "id": 26,
+    "name": "햄",
+    "emoji": "🍖",
+    "category": "가공식품",
+    "quantity": "180g",
+    "expiryDate": "2026-03-10",
+    "storage": "냉장"
+  },
+  {
+    "id": 27,
+    "name": "소시지",
+    "emoji": "🌭",
+    "category": "가공식품",
+    "quantity": "4개",
+    "expiryDate": "2026-03-05",
+    "storage": "냉장"
+  },
+
+  {
+    "id": 28,
+    "name": "콩나물",
+    "emoji": "🌱",
+    "category": "채소",
+    "quantity": "300g",
+    "expiryDate": "2026-01-02",
+    "storage": "냉장"
+  },
+  {
+    "id": 29,
+    "name": "상추",
+    "emoji": "🥬",
+    "category": "채소",
+    "quantity": "100g",
+    "expiryDate": "2026-01-04",
+    "storage": "냉장"
+  },
+  {
+    "id": 30,
+    "name": "깻잎",
+    "emoji": "🌿",
+    "category": "채소",
+    "quantity": "20장",
+    "expiryDate": "2026-01-05",
+    "storage": "냉장"
+  },
+
+  {
+    "id": 31,
+    "name": "김치",
+    "emoji": "🥘",
+    "category": "발효식품",
+    "quantity": "1kg",
+    "expiryDate": "2026-03-20",
+    "storage": "냉장"
+  },
+  {
+    "id": 32,
+    "name": "된장",
+    "emoji": "🟫",
+    "category": "장류",
+    "quantity": "500g",
+    "expiryDate": "2026-06-10",
+    "storage": "냉장"
+  },
+  {
+    "id": 33,
+    "name": "고추장",
+    "emoji": "🟥",
+    "category": "장류",
+    "quantity": "500g",
+    "expiryDate": "2026-07-15",
+    "storage": "실온"
+  },
+  {
+    "id": 34,
+    "name": "간장",
+    "emoji": "🧂",
+    "category": "장류",
+    "quantity": "1병",
+    "expiryDate": "2026-10-10",
+    "storage": "실온"
+  },
+
+  {
+    "id": 35,
+    "name": "참기름",
+    "emoji": "🛢️",
+    "category": "오일",
+    "quantity": "250ml",
+    "expiryDate": "2026-09-20",
+    "storage": "실온"
+  },
+
+  {
+    "id": 36,
+    "name": "감자튀김",
+    "emoji": "🍟",
+    "category": "냉동식품",
+    "quantity": "1kg",
+    "expiryDate": "2026-08-01",
+    "storage": "냉동"
+  },
+  {
+    "id": 37,
+    "name": "만두",
+    "emoji": "🥟",
+    "category": "냉동식품",
+    "quantity": "900g",
+    "expiryDate": "2026-08-10",
+    "storage": "냉동"
+  },
+  {
+    "id": 38,
+    "name": "피자",
+    "emoji": "🍕",
+    "category": "냉동식품",
+    "quantity": "1개",
+    "expiryDate": "2026-09-01",
+    "storage": "냉동"
+  },
+  {
+    "id": 39,
+    "name": "볶음밥",
+    "emoji": "🍚",
+    "category": "냉동식품",
+    "quantity": "450g",
+    "expiryDate": "2026-06-30",
+    "storage": "냉동"
+  },
+
+  {
+    "id": 40,
+    "name": "밀가루",
+    "emoji": "🌾",
+    "category": "건조식품",
+    "quantity": "1kg",
+    "expiryDate": "2026-12-01",
+    "storage": "실온"
+  },
+  {
+    "id": 41,
+    "name": "설탕",
+    "emoji": "🍬",
+    "category": "건조식품",
+    "quantity": "1kg",
+    "expiryDate": "2026-12-01",
+    "storage": "실온"
+  },
+  {
+    "id": 42,
+    "name": "소금",
+    "emoji": "🧂",
+    "category": "건조식품",
+    "quantity": "500g",
+    "expiryDate": "2030-01-01",
+    "storage": "실온"
+  },
+
+  {
+    "id": 43,
+    "name": "파스타면",
+    "emoji": "🍝",
+    "category": "건조식품",
+    "quantity": "500g",
+    "expiryDate": "2026-01-01",
+    "storage": "실온"
+  },
+  {
+    "id": 44,
+    "name": "라면",
+    "emoji": "🍜",
+    "category": "건조식품",
+    "quantity": "5개입",
+    "expiryDate": "2026-05-10",
+    "storage": "실온"
+  },
+
+  {
+    "id": 45,
+    "name": "올리브유",
+    "emoji": "🧴",
+    "category": "오일",
+    "quantity": "500ml",
+    "expiryDate": "2026-03-03",
+    "storage": "실온"
+  },
+  {
+    "id": 46,
+    "name": "버터",
+    "emoji": "🧈",
+    "category": "유제품",
+    "quantity": "200g",
+    "expiryDate": "2026-02-15",
+    "storage": "냉장"
+  },
+
+  {
+    "id": 47,
+    "name": "식빵",
+    "emoji": "🍞",
+    "category": "베이커리",
+    "quantity": "1봉",
+    "expiryDate": "2026-01-02",
+    "storage": "실온"
+  },
+  {
+    "id": 48,
+    "name": "또띠야",
+    "emoji": "🌯",
+    "category": "베이커리",
+    "quantity": "10장",
+    "expiryDate": "2026-01-30",
+    "storage": "냉장"
+  },
+
+  {
+    "id": 49,
+    "name": "초콜릿",
+    "emoji": "🍫",
+    "category": "간식",
+    "quantity": "150g",
+    "expiryDate": "2026-11-11",
+    "storage": "실온"
+  },
+  {
+    "id": 50,
+    "name": "요구르트 드링크",
+    "emoji": "🥛",
+    "category": "유제품",
+    "quantity": "4개",
+    "expiryDate": "2026-01-08",
+    "storage": "냉장"
+  }
+]

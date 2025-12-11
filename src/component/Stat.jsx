@@ -1,21 +1,13 @@
-import { useNavigate,useLocation } from "react-router-dom";
-import "./style/Common.css"; // 스타일 파일 
-import "./style/Stat.css"; // 스타일 파일 
+import "../style/Common.css"; // 스타일 파일 
+import "../style/Stat.css"; // 스타일 파일 
+import Sidebar from "./Sidebar"; 
 
-export default function Stat(){
+export default function Stat({children}){
     return (
-    <div className="Stat-layout">
-
-      {/* Sidebar */}
-        <nav className="side-nav">
-        <div className="logo">Smart Chef</div>
-        <NavItem label="냉장고" path="/fridge" />
-        <NavItem label="레시피" path="/recipe" />
-        <NavItem label="통계" path="/stat" />
-        <NavItem label="가족" path="/family" />
-        <NavItem label="설정" path="/setting" />
-   
-      </nav>
+     <div className="Stat-layout">
+     <Sidebar />
+     <div className="content">
+       {children}
     
 
       {/* Main */}
@@ -77,21 +69,8 @@ export default function Stat(){
         </section>
       </main>
     </div>
+    </div>
   );
 
-    function NavItem({ label, path }) {
-    const navigate = useNavigate();
-      const location = useLocation();
-    return (
-      <div className="nav-item"
-        onClick={() => {
-          console.log("Click:", label, path);
-          if(path!==location.path) navigate(path) ;  
-        }}
-      >
-        {label}
-      </div>
-    )
-  }
     
 }
