@@ -1,66 +1,100 @@
+import { useState, useEffect } from "react";
 import "../style/DashBoard.css";
 import "../style/Common.css";
 import Sidebar from "./Sidebar";
+import ingreDientData from "../mock/ingreDient.json";
 
 export default function Dashboard({ children }) {
+  const [nearExpiry, setNearExpiry] = useState({}); // {카테고리: [재료들]}
+
+  useEffect(() => {
+    const today = new Date();
+
+    //  얘도 공통단으로 빼는게 좋을듯
+    const getDDay = (dateStr) => {
+      const expiry = new Date(dateStr);
+      const diff = expiry - today;
+      return Math.ceil(diff / (1000 * 60 * 60 * 24)); // 일수
+    };
+
+    const filtered = ingreDientData
+      .map((item) => ({
+        ...item,
+        dDay: getDDay(item.expiryDate),
+      }))
+      .filter((item) => item.dDay <= 10 && item.dDay >= 0);
+
+    const grouped = filtered.reduce((acc, item) => {
+      if (!acc[item.category]) acc[item.category] = [];
+      acc[item.category].push(item);
+      return acc;
+    }, {});
+
+    setNearExpiry(grouped);
+  }, []);
+
   const notifications = [
     { text: "우유 유통기한 임박!", time: "2시간 전" },
     { text: "계란이 곧 상해요!", time: "어제" },
   ];
 
   return (
-
     /* --- 사이드바 공통단 --- */
     <div className="layout">
       <Sidebar />
 
-    {/* 사이드바 공통단 */}
+      {/* 사이드바 공통단 */}
       <div className="content">
         {children}
 
-    {/* 메인 */}
+        {/* 메인 */}
         <div className="main">
-        
           <header className="top-bar">
-            <input className="search-input" placeholder="재료 검색..." />
             <NotificationsBell count={notifications.length} />
             <UserProfile />
           </header>
 
-          {/* --- Dashboard Panels --- */}
+          {/* 유통기한이 10일 이내인 것들만 보여주기 */}
+          {/* 1. 전체 재료 json 파일 가져오기*/}
+          {/* 2. 유통기한 계산식  */}
+          {/* 3. 계산식에서 D-10 일 이내인것들만 추리기 */}
+          {/* 4. 현재 화면에 카테고리별로 뿌려주기 */}
+
           <div className="dashboard-grid">
-            {/* 전체 재료 패널 */}
             <section className="panel">
-              <h2>전체 재료</h2>
+              <h2>유통기한 임박 재료</h2>
+
+              {/* 상단 경고 박스 */}
               <div className="alert-box">
                 <span>⚠ 유통기한 임박</span>
                 <span className="desc">
-                  우유 D-1 | 배추 D-2 | 돼지고기 D-3
+                  {Object.values(nearExpiry)
+                    .flat()
+                    .slice(0, 5) // 5개만 보여주기 나중에 갯수 늘려도 됨
+                    .map((i) => `${i.name} D-${i.dDay}`)
+                    .join(" | ")}
                 </span>
               </div>
 
-              <div className="category">
-                <strong>채소류 (5)</strong>
-                <div className="item">
-                  <span>당근 5개</span>
-                  <span className="date">D-5</span>
-                </div>
-                <div className="item">
-                  <span>양파 3개</span>
-                  <span className="date">D-7</span>
-                </div>
-              </div>
+              {/* 카테고리 그룹 */}
+              {Object.keys(nearExpiry).map((category) => (
+                <div className="category" key={category}>
+                  <strong>
+                    {category} ({nearExpiry[category].length})
+                  </strong>
 
-              <div className="category">
-                <strong>육류 (3)</strong>
-                <div className="item">
-                  <span>닭가슴살 500g</span>
-                  <span className="date">D-4</span>
+                  {nearExpiry[category].map((item) => (
+                    <div className="item" key={item.id}>
+                      <span>
+                        {item.name} {item.quantity}
+                      </span>
+                      <span className="date">D-{item.dDay}</span>
+                    </div>
+                  ))}
                 </div>
-              </div>
+              ))}
             </section>
 
-            {/* 추천 레시피 */}
             <section className="panel">
               <h2>추천 레시피</h2>
               <div className="recipe-box">
@@ -69,7 +103,6 @@ export default function Dashboard({ children }) {
               </div>
             </section>
 
-            {/* 통계 */}
             <section className="panel">
               <h2>이번 달 통계</h2>
               <div className="stats-row">

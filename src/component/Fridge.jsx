@@ -3,12 +3,16 @@ import "../style/Fridge.css";
 import "../style/Common.css";
 import Sidebar from "./Sidebar";
 import ingreDientData from "../mock/ingreDient.json";
+import IngreDientAddModal from "../modal/ingreDientAddModal.jsx";
 
 export default function Fridge({ children }) {
   const [ingreDients, setIngreDient] = useState([]);
   const [storages, setStorage] = useState([]);
   const [activeCategory, setActiveCategory] = useState("전체");
   const [allItems, setAllItems] = useState([]); // 이거 날라감 카테고리 선택하면 그래서 추가함
+
+  //모달 불러올 때 넣고
+  const [showModal, setShowModal] = useState(false);
 
   const getDDay = (expiryDate) => {
     const today = new Date();
@@ -66,7 +70,10 @@ export default function Fridge({ children }) {
           {/* Top Bar */}
           <div className="top-bar">
             <input className="search-box" placeholder="재료 검색..." />
-            <button className="add-btn">+ 추가</button>
+            <button className="add-btn" onClick={() => setShowModal(true)}>+ 추가</button>
+            {showModal && (
+        <IngreDientAddModal onClose={() => setShowModal(false)} />
+      )}
           </div>
 
           {/* Title */}
