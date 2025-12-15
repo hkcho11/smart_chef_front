@@ -1,6 +1,4 @@
-/* ============================
-   Backdrop
-============================ */
+
 .iam-backdrop {
   position: fixed;
   inset: 0;
@@ -8,63 +6,43 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  backdrop-filter: blur(3px);
   z-index: 9999;
 }
 
-/* ============================
-   Modal Container
-============================ */
+
 .iam-container {
   width: 520px;
-  background: #ffffff;
-  border-radius: 18px;
-  padding: 28px 32px;
-  box-shadow: 0 20px 45px rgba(0,0,0,0.18);
-  animation: iamPop 0.38s cubic-bezier(0.16, 1, 0.3, 1);
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.18);
+  padding: 24px 28px;
 }
 
-@keyframes iamPop {
-  from { opacity: 0; transform: translateY(18px) scale(0.97); }
-  to   { opacity: 1; transform: translateY(0) scale(1); }
-}
 
-/* ============================
-   Header
-============================ */
 .iam-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #e5e5e5;
 }
 
 .iam-header h2 {
-  margin: 0;
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 700;
-  color: #222;
+  margin: 0;
 }
 
 .iam-close-btn {
-  border: none;
+  font-size: 24px;
   background: none;
-  font-size: 28px;
+  border: none;
   cursor: pointer;
-  line-height: 1;
-  padding: 2px;
-  color: #777;
-  transition: 0.2s;
-}
-.iam-close-btn:hover {
-  color: #000;
-  transform: scale(1.15);
+  color: #999;
 }
 
-/* ============================
-   Body
-============================ */
 .iam-body {
-  margin-top: 22px;
+  margin-top: 20px;
 }
 
 .iam-row {
@@ -76,153 +54,140 @@
 .iam-row label {
   font-size: 14px;
   font-weight: 600;
+  margin-bottom: 6px;
   color: #333;
-  margin-bottom: 8px;
 }
 
-/* input / select only inside Modal */
 .iam-container input,
 .iam-container select {
-  padding: 12px 14px;
-  border: 1px solid #d0d0d0;
-  border-radius: 10px;
-  font-size: 15px;
-  background: #fafafa;
-  transition: 0.2s;
-}
-
-.iam-container input:hover,
-.iam-container select:hover {
-  border-color: #b7b7b7;
+  height: 44px;
+  padding: 0 14px;
+  border-radius: 8px;
+  border: 1px solid #dcdcdc;
+  font-size: 14px;
+  background: #fff;
+  box-sizing: border-box;
 }
 
 .iam-container input:focus,
 .iam-container select:focus {
-  border-color: #19a54f;
   outline: none;
-  background: #fff;
-  box-shadow: 0 0 0 2px rgba(25,165,79,0.18);
+  border-color: #4caf50;
 }
 
 
-/* ============================
-   Expiry
-============================ */
-.iam-expiry-row {
-  display: flex;
-  gap: 12px;
-  align-items: center;
-}
-
-.iam-dday {
-  background: #e7fbe9;
-  padding: 8px 16px;
-  border-radius: 10px;
-  color: #15883e;
-  font-weight: 700;
-  font-size: 14px;
-  border: 1px solid #ccefd6;
-}
-
-/* ============================
-   Storage Buttons
-============================ */
-.iam-storage-buttons {
-  display: flex;
-  gap: 12px;
-}
-
-.iam-storage {
-  padding: 10px 20px;
-  border-radius: 10px;
-  background: #f4f4f4;
-  border: 1px solid #dcdcdc;
-  font-size: 15px;
-  cursor: pointer;
-  transition: 0.2s;
-}
-.iam-storage:hover {
-  background: #eaeaea;
-}
-.iam-storage.active {
-  background: #19a54f;
-  border-color: #19a54f;
-  color: #fff;
-  box-shadow: 0 3px 8px rgba(25,165,79,0.3);
-}
-
-/* ============================
-   Footer
-============================ */
-.iam-footer {
-  display: flex;
-  justify-content: flex-end;
-  gap: 12px;
-  margin-top: 20px;
-}
-
-.iam-cancel {
-  padding: 10px 22px;
-  border-radius: 10px;
-  background: #f1f1f1;
-  border: 1px solid #ccc;
-  cursor: pointer;
-  transition: 0.2s;
-}
-.iam-cancel:hover {
-  background: #e6e6e6;
-}
-
-.iam-confirm {
-  padding: 10px 26px;
-  border-radius: 10px;
-  background: linear-gradient(90deg, #19a54f, #13c060);
-  border: none;
-  color: #fff;
-  cursor: pointer;
-  font-weight: 600;
-  box-shadow: 0 6px 14px rgba(25,165,79,0.35);
-  transition: 0.25s;
-}
-.iam-confirm:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 18px rgba(25,165,79,0.45);
-}
-
-input,
-select {
-  padding: 12px 14px;
-  height: 46px;           /* ← 강제 동일 높이 */
-  border: 1px solid #d0d0d0;
-  border-radius: 10px;
-  font-size: 15px;
-  background: #fafafa;
-  box-sizing: border-box;
-}
-
-.two-col {
+.iam-two-col {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 2fr 1fr;
   gap: 16px;
-  align-items: flex-start;   /* ✨ 두 컬럼 위쪽 기준 맞추기 */
 }
 
-.quantity-box {
+
+.iam-two-col > div:first-child {
   display: flex;
   flex-direction: column;
+}
+
+
+.iam-two-col > div:last-child {
+  display: flex;
+  flex-direction: column;
+}
+
+.iam-quantity-row {
+  display: flex;
   gap: 8px;
 }
 
-.quantity-row {
+.iam-quantity-row input {
+  width: 70px;
+  text-align: center;
+}
+
+.iam-quantity-row select {
+  width: 70px;
+}
+
+
+.iam-expiry-row {
   display: flex;
-  align-items: center;        /* ✨ 내부 input/select 중앙 맞춤 */
+  align-items: center;
   gap: 12px;
 }
 
-/* select 기본 높이를 input과 완전히 동일하게 강제 */
-.quantity-row select,
-.quantity-row input {
-  height: 44px !important;   /* ✨ input과 select 높이 동일하게 */
-  padding: 0 12px;
-  box-sizing: border-box;
+.iam-dday {
+  padding: 10px 16px;
+  border-radius: 8px;
+  background: #e9f7ec;
+  color: #2e7d32;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+
+.iam-storage-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.iam-storage {
+  flex: 1;
+  height: 44px;
+  border-radius: 8px;
+  border: 1px solid #dcdcdc;
+  background: #fff;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.iam-storage.active {
+  background: #4caf50;
+  border-color: #4caf50;
+  color: #fff;
+  font-weight: 600;
+}
+
+.iam-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.iam-cancel {
+  height: 42px;
+  padding: 0 18px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background: #fff;
+  cursor: pointer;
+}
+
+.iam-confirm {
+  height: 42px;
+  padding: 0 22px;
+  border-radius: 8px;
+  border: none;
+  background: #4caf50;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.iam-confirm.loading {
+  pointer-events: none;
+  opacity: 0.85;
+  background: linear-gradient(
+    90deg,
+    #4caf50,
+    #6fdc8c,
+    #4caf50
+  );
+  background-size: 200% 100%;
+  animation: loadingMove 1.2s linear infinite;
+}
+
+@keyframes loadingMove {
+  from { background-position: 0% 0; }
+  to   { background-position: 200% 0; }
 }

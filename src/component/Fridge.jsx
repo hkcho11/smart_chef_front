@@ -10,6 +10,7 @@ export default function Fridge({ children }) {
   const [storages, setStorage] = useState([]);
   const [activeCategory, setActiveCategory] = useState("전체");
   const [allItems, setAllItems] = useState([]); // 이거 날라감 카테고리 선택하면 그래서 추가함
+  const [search, setSearch] = useState("");
 
   //모달 불러올 때 넣고
   const [showModal, setShowModal] = useState(false);
@@ -38,15 +39,8 @@ export default function Fridge({ children }) {
   }, []);
 
   const onCategoryClick = (storage) => {
-    console.log("Category Click:", storage);
-
     setActiveCategory(storage);
-
-    if (storage === "전체") {
-      setIngreDient(allItems);
-    } else {
-      setIngreDient(allItems.filter((i) => i.storage === storage));
-    }
+    applyFilter(storage, search);
   };
 
   const groupByCategory = (items) => {
@@ -56,7 +50,22 @@ export default function Fridge({ children }) {
       if (!groups[key]) groups[key] = [];
       groups[key].push(item);
     });
+
     return groups;
+  };
+
+  const applyFilter = (storage, keyword) => {
+    let filtered = allItems;
+
+    if (storage !== "전체") {
+      filtered = filtered.filter((item) => item.storage === storage);
+    }
+
+    if (keyword.trim() !== "") {
+      filtered = filtered.filter((item) => item.name.includes(keyword));
+    }
+
+    setIngreDient(filtered);
   };
 
   return (
@@ -69,11 +78,22 @@ export default function Fridge({ children }) {
         <main className="fridge-content">
           {/* Top Bar */}
           <div className="top-bar">
-            <input className="search-box" placeholder="재료 검색..." />
-            <button className="add-btn" onClick={() => setShowModal(true)}>+ 추가</button>
+            <input
+              className="search-box"
+              placeholder="재료 검색..."
+              value={search}
+              onChange={(e) => {
+                const value = e.target.value;
+                setSearch(value);
+                applyFilter(activeCategory, value);
+              }}
+            />
+            <button className="add-btn" onClick={() => setShowModal(true)}>
+              + 추가
+            </button>
             {showModal && (
-        <IngreDientAddModal onClose={() => setShowModal(false)} />
-      )}
+              <IngreDientAddModal onClose={() => setShowModal(false)} />
+            )}
           </div>
 
           {/* Title */}
