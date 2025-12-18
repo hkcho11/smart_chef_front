@@ -1,5 +1,6 @@
 import "../style/ingreDientAddModal.css";
 import { useState } from "react";
+import { createIngredient } from "../api/ingreDientAddApi";
 
 export default function IngredientAddModal({ onClose, onConfirm }) {
   const [storage, setStorage] = useState("냉장");
@@ -10,7 +11,7 @@ export default function IngredientAddModal({ onClose, onConfirm }) {
   const [unit, setUnit] = useState("개");
   const [expiryDate, setExpiryDate] = useState("");
 
-  const handleConfirm = () => {
+  const handleConfirm = async() => {
     const newIngredient = {
       name,
       category,
@@ -23,12 +24,38 @@ export default function IngredientAddModal({ onClose, onConfirm }) {
 
     setIsSaving(true);
 
-    setTimeout(() => {
+    try {
+      const data = await createIngredient(newIngredient);
+      console.log("백 대답", data);
+
+      setTimeout(() => {
+        setIsSaving(false);
+        onConfirm?.(data);
+        onClose();
+      }, 800);
+    } catch (err) {
+      console.error("재료추가 실패", err);
       setIsSaving(false);
-      onConfirm?.(newIngredient);
-      onClose();
-    }, 800);
+    }
   };
+
+  
+
+    //   onConfirm?.(newIngredient);
+    //       setTimeout(() => {
+    //    setIsSaving(false);
+    //    onConfirm?.(newIngredient);
+    //    onClose();
+    //  }, 800);
+
+    // } catch(err){
+    //   console.error("재료추가 실패",err);
+    // }finally{
+    //   setIsSaving(false);
+    // }
+
+  
+  
 
   return (
     <div className="iam-backdrop">
@@ -134,5 +161,4 @@ export default function IngredientAddModal({ onClose, onConfirm }) {
     
   );
 
-}
-
+};

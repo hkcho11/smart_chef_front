@@ -52,14 +52,14 @@
   text-decoration: underline;
   transform: translateX(2px);
 }
-/* ========== 제목 ========== */
+
+
 .title {
   margin: 8px 0 18px;
   font-size: 24px;
   font-weight: 700;
 }
 
-/* ========== 탭 메뉴 ========== */
 .tabs {
   display: flex;
   gap: 10px;
@@ -89,17 +89,57 @@
   box-shadow: 0 4px 14px rgba(75,108,255,0.32);
 }
 
-/* ========== 경고박스 ========== */
 .warning {
-  background: #fff8e7;
-  border: 1.5px solid #ffb648;
-  padding: 16px 20px;
-  border-radius: 14px;
-  display: flex;
-  justify-content: space-between;
-  gap: 12px;
+  background: #fff4f4;
+  border: 1px solid #ffcccc;
+  border-radius: 10px;
+  padding: 12px 16px;
+}
+.warning-header {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.recipe-recommend .link-btn {
+  background: none;
+  border: none;
+  color: #4caf50;
+  cursor: pointer;
   font-size: 14px;
-  animation: fadeUp .45s ease both;
+  white-space: nowrap; 
+}
+
+.warning-title-area {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;          
+  margin-bottom: 12px;          
+}
+
+.warning-tags {
+  display: flex;
+  gap: 8px;
+  margin-top: 6px;
+  flex-wrap: wrap;
+}
+
+.warning-tag {
+  background: #ffecec;
+  color: #c0392b;
+  font-size: 13px;
+  padding: 4px 8px;
+  border-radius: 999px;
+}
+
+.warning-more {
+  font-size: 13px;
+  color: #888;
+}
+
+.warning-tag.expired {
+  background: #ffdddd;
+  color: #a10000;
+  font-weight: bold;
 }
 
 

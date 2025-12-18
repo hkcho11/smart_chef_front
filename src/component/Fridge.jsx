@@ -68,6 +68,8 @@ export default function Fridge({ children }) {
     setIngreDient(filtered);
   };
 
+  const urgentItems = allItems.filter((item) => item.dDay <= 10);
+
   return (
     <div className="layout">
       <Sidebar />
@@ -112,9 +114,25 @@ export default function Fridge({ children }) {
             ))}
           </div>
 
-          <div className="warning">
-            <div>⚠️ 유통기한 임박 재료 (3개)</div>
-            <button className="link-btn">레시피 추천 →</button>
+          <div className="warning">          
+            <div className="warning-title-area">
+              <div className="warning-header">
+                ⚠️ 유통기한 임박 및 지난 재료 ({urgentItems.length}개)
+              </div>
+              <div className="recipe-recommend">
+                <button className="link-btn">레시피 추천 →</button>
+              </div>
+            </div>
+
+            <div className="warning-tags">
+              {urgentItems.map((item) => (
+                <span
+                  className={`warning-tag ${item.dDay < 0 ? "expired" : ""}`}
+                >
+                  {item.emoji || "⚠️"} {item.name}
+                </span>
+              ))}
+            </div>
           </div>
 
           <div className="items-grid">
@@ -130,7 +148,13 @@ export default function Fridge({ children }) {
                       <span>
                         {item.emoji} {item.name}
                       </span>
-                      <span>D-{item.dDay}</span>
+                      <span
+                        className={`expiry ${
+                          item.dDay < 0 ? "expired" : "normal"
+                        }`}
+                      >
+                        {item.dDay < 0 ? "⚠️ 유통기한 지남" : `D-${item.dDay}`}
+                      </span>
                     </div>
                   ))}
                 </div>
