@@ -37,16 +37,16 @@ export default function Recipe({children }) {
       {/* === Recipe Page === */}
       <main className="recipe-container">
          <div className="top-bar">
-          <input className="search-box" placeholder="레시피 검색..." />
+           <div className="actions">
+            <button>AI 추천</button>
+            <button>검색</button>
+          </div>
+          <input className="search-box" placeholder="레시피 검색..." />          
           <button className="add-btn">+ 추가</button>
         </div>
         {/* 검색 영역 */}
         <div className="search-area">
           <div className="title">🔍 레시피 추천</div>
-          <div className="actions">
-            <button>AI 추천</button>
-            <button>검색</button>
-          </div>
         </div>
 
         {/* 긴급 배너 */}
