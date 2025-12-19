@@ -1,6 +1,7 @@
-import "../style/ingreDientAddModal.css";
+import "../style/IngreDientAddModal.css";
 import { useState } from "react";
 import { createIngredient } from "../api/ingreDientAddApi";
+
 
 export default function IngredientAddModal({ onClose, onConfirm }) {
   const [storage, setStorage] = useState("냉장");

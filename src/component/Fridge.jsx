@@ -3,7 +3,9 @@ import "../style/Fridge.css";
 import "../style/Common.css";
 import Sidebar from "./Sidebar";
 import ingreDientData from "../mock/ingreDient.json";
-import IngreDientAddModal from "../modal/ingreDientAddModal.jsx";
+import IngreDientAddModal from "../modal/IngreDientAddModal.jsx";
+import ConfirmDeleteModal from "../modal/ConfirmDeleteModal.jsx";
+import { deleteIngredient } from "../api/ingreDientAddApi";
 
 export default function Fridge({ children }) {
   const [ingreDients, setIngreDient] = useState([]);
@@ -14,6 +16,7 @@ export default function Fridge({ children }) {
 
   //모달 불러올 때 넣고
   const [showModal, setShowModal] = useState(false);
+  const [deleteModal, setDeleteModal] = useState(null);
 
   const getDDay = (expiryDate) => {
     const today = new Date();
@@ -70,6 +73,22 @@ export default function Fridge({ children }) {
 
   const urgentItems = allItems.filter((item) => item.dDay <= 10);
 
+  const handleDelete = async (id) => {
+  try {
+    await deleteIngredient(id);
+
+    setIngreDient((prev) =>
+      prev.filter((item) => item.id !== id)
+    );
+
+    setAllItems((prev) =>
+      prev.filter((item) => item.id !== id)
+    );
+  } catch (e) {
+    alert("삭제 실패");
+  }
+};
+
   return (
     <div className="layout">
       <Sidebar />
@@ -114,7 +133,7 @@ export default function Fridge({ children }) {
             ))}
           </div>
 
-          <div className="warning">          
+          <div className="warning">
             <div className="warning-title-area">
               <div className="warning-header">
                 ⚠️ 유통기한 임박 및 지난 재료 ({urgentItems.length}개)
@@ -145,21 +164,42 @@ export default function Fridge({ children }) {
 
                   {items.map((item) => (
                     <div key={item.id} className="item-row">
-                      <span>
+                      <span className="item-name">
                         {item.emoji} {item.name}
                       </span>
-                      <span
-                        className={`expiry ${
-                          item.dDay < 0 ? "expired" : "normal"
-                        }`}
-                      >
-                        {item.dDay < 0 ? "⚠️ 유통기한 지남" : `D-${item.dDay}`}
-                      </span>
+
+                      <div className="item-right">
+                        <span
+                          className={`expiry ${
+                            item.dDay < 0 ? "expired" : "normal"
+                          }`}
+                        >
+                          {item.dDay < 0
+                            ? "⚠️ 유통기한 지남"
+                            : `D-${item.dDay}`}
+                        </span>
+
+                        <button
+                          className="delete-btn"
+                          onClick={() => setDeleteModal(item)}
+                          aria-label="delete"
+                        >
+                          🗑️
+                        </button>
+                      </div>
                     </div>
                   ))}
                 </div>
               )
             )}
+            <ConfirmDeleteModal
+              item={deleteModal}
+              onCancel={() => setDeleteModal(null)}
+              onConfirm={() => {
+                handleDelete(deleteModal.id);
+                setDeleteModal(null);
+              }}
+            />
           </div>
         </main>
       </div>
